@@ -1,0 +1,19 @@
+class Solution(object):
+    def setZeroes(self, matrix):
+        n=len(matrix)
+        m=len(matrix[0])
+        column =[0]*m
+        row = [0]*n
+        for i in range(n):
+            for j in range(m):
+                if matrix[i][j]==0:
+                    column[j]=1
+                    row[i]=1
+        for i in range(n):
+            for j in range(m):
+                if row[i] or column [j]==1:
+                    matrix[i][j]=0
+        return matrix
+                    
+                
+        
