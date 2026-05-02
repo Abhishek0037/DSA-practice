@@ -1,0 +1,12 @@
+class Solution(object):
+    def minSubArrayLen(self, target, nums):
+        l=0
+        sumcurr=0
+        mini=float('inf')
+        for r in range(len(nums)):
+            sumcurr+=nums[r]
+            while sumcurr>=target:
+                mini=min(mini,r-l+1)
+                sumcurr-=nums[l]
+                l+=1
+        return 0 if mini==float('inf') else mini
